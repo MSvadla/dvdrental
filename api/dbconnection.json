@@ -1,0 +1,15 @@
+{
+    "data": {
+        "attributes": {
+        "name": "dvdrental",
+        "url": "jdbc:postgresql://host.docker.internal:2345/dvdrental",
+        "schema": "public",
+        "type": "POSTGRESQL",
+        "username": "demouser",
+        "password": "demopass",
+        "enableCaching": false
+    },
+    "id": "dvdrental",
+    "type": "dataSource"
+    }
+}

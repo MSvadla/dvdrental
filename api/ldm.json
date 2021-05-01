@@ -1,0 +1,295 @@
+{
+    "ldm": {
+        "datasets": [
+            {
+                "id": "dataset.rental",
+                "title": "Rental",
+                "description": "Rental",
+                "grain": [
+                    {
+                        "id": "attr.rental.rentalid",
+                        "type": "attribute"
+                    }
+                ],
+                "attributes": [
+                    {
+                        "id": "attr.rental.rentalid",
+                        "title": "Rental ID",
+                        "description": "Rental ID",
+                        "labels": [
+                            {
+                                "id": "label.rental.rentalid",
+                                "title": "Rental ID",
+                                "description": "",
+                                "primary": true,
+                                "sourceColumn": "rental_id"
+                            }
+                        ]
+                    }
+                ],
+                "facts": [
+                    {
+                        "id": "fact.rental.rentalamount",
+                        "title": "Rental Amount",
+                        "description": "Rental Amount",
+                        "sourceColumn": "amount"
+                    }
+                ],
+                "references": [
+                    {
+                        "identifier": {
+                            "id": "dataset.movie",
+                            "type": "dataset"
+                        },
+                        "multivalue": false,
+                        "sourceColumns": [
+                            "film_id"
+                        ]
+                    },
+                    {
+                        "identifier": {
+                            "id": "dataset.store",
+                            "type": "dataset"
+                        },
+                        "multivalue": false,
+                        "sourceColumns": [
+                            "store_id"
+                        ]
+                    },
+                    {
+                        "identifier": {
+                            "id": "date",
+                            "type": "dataset"
+                        },
+                        "multivalue": false,
+                        "sourceColumns": [
+                            "rental_date"
+                        ]
+                    }
+                ],
+                "dataSourceTableId": {
+                    "id": "a__dvd_rental",
+                    "dataSourceId": "dvdrental",
+                    "type": "dataSource"
+                }
+            },
+            {
+                "id": "dataset.store",
+                "title": "Store",
+                "description": "Store",
+                "grain": [
+                    {
+                        "id": "attr.store.storeid",
+                        "type": "attribute"
+                    }
+                ],
+                "attributes": [
+                    {
+                        "id": "attr.store.storeid",
+                        "title": "Store ID",
+                        "description": "Store ID",
+                        "labels": [
+                            {
+                                "id": "label.store.storeid",
+                                "title": "Store ID",
+                                "description": "",
+                                "primary": true,
+                                "sourceColumn": "store_id"
+                            }
+                        ]
+                    }
+                ],
+                "facts": [],
+                "references": [
+                    {
+                        "identifier": {
+                            "id": "dataset.country",
+                            "type": "dataset"
+                        },
+                        "multivalue": false,
+                        "sourceColumns": [
+                            "country_id"
+                        ]
+                    },
+                    {
+                        "identifier": {
+                            "id": "dataset.city",
+                            "type": "dataset"
+                        },
+                        "multivalue": false,
+                        "sourceColumns": [
+                            "city_id"
+                        ]
+                    }
+                ],
+                "dataSourceTableId": {
+                    "id": "a__dvd_store",
+                    "dataSourceId": "dvdrental",
+                    "type": "dataSource"
+                }
+            },
+            {
+                "id": "dataset.movie",
+                "title": "Movie",
+                "description": "Movie",
+                "grain": [
+                    {
+                        "id": "attr.movie.movieid",
+                        "type": "attribute"
+                    }
+                ],
+                "attributes": [
+                    {
+                        "id": "attr.movie.moviename",
+                        "title": "Movie Name",
+                        "description": "Movie Name",
+                        "labels": [
+                            {
+                                "id": "label.movie.moviename",
+                                "title": "Movie Name",
+                                "description": "",
+                                "primary": true,
+                                "sourceColumn": "title"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "attr.movie.movieid",
+                        "title": "Movie ID",
+                        "description": "Movie ID",
+                        "labels": [
+                            {
+                                "id": "label.movie.movieid",
+                                "title": "Movie ID",
+                                "description": "",
+                                "primary": true,
+                                "sourceColumn": "film_id"
+                            }
+                        ]
+                    }
+                ],
+                "facts": [],
+                "references": [],
+                "dataSourceTableId": {
+                    "id": "film",
+                    "dataSourceId": "dvdrental",
+                    "type": "dataSource"
+                }
+            },
+            {
+                "id": "dataset.country",
+                "title": "Country",
+                "description": "Country",
+                "grain": [
+                    {
+                        "id": "attr.country.countryid",
+                        "type": "attribute"
+                    }
+                ],
+                "attributes": [
+                    {
+                        "id": "attr.country.countryname",
+                        "title": "Country Name",
+                        "description": "Country Name",
+                        "labels": [
+                            {
+                                "id": "label.country.countryname",
+                                "title": "Country Name",
+                                "description": "",
+                                "primary": true,
+                                "sourceColumn": "country"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "attr.country.countryid",
+                        "title": "Country ID",
+                        "description": "Country ID",
+                        "labels": [
+                            {
+                                "id": "label.country.countryid",
+                                "title": "Country ID",
+                                "description": "",
+                                "primary": true,
+                                "sourceColumn": "country_id"
+                            }
+                        ]
+                    }
+                ],
+                "facts": [],
+                "references": [],
+                "dataSourceTableId": {
+                    "id": "country",
+                    "dataSourceId": "dvdrental",
+                    "type": "dataSource"
+                }
+            },
+            {
+                "id": "dataset.city",
+                "title": "City",
+                "description": "City",
+                "grain": [
+                    {
+                        "id": "attr.city.cityid",
+                        "type": "attribute"
+                    }
+                ],
+                "attributes": [
+                    {
+                        "id": "attr.city.cityid",
+                        "title": "City ID",
+                        "description": "City ID",
+                        "labels": [
+                            {
+                                "id": "label.city.cityid",
+                                "title": "City ID",
+                                "description": "",
+                                "primary": true,
+                                "sourceColumn": "city_id"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "attr.city.cityname",
+                        "title": "City Name",
+                        "description": "City Name",
+                        "labels": [
+                            {
+                                "id": "label.city.cityname",
+                                "title": "City Name",
+                                "description": "",
+                                "primary": true,
+                                "sourceColumn": "city"
+                            }
+                        ]
+                    }
+                ],
+                "facts": [],
+                "references": [],
+                "dataSourceTableId": {
+                    "id": "city",
+                    "dataSourceId": "dvdrental",
+                    "type": "dataSource"
+                }
+            }
+        ],
+        "dateInstances": [
+            {
+                "id": "date",
+                "title": "Date",
+                "description": "",
+                "granularitiesFormatting": {
+                    "titleBase": "Date",
+                    "titlePattern": ""
+                },
+                "granularities": [
+                    "MONTH",
+                    "YEAR",
+                    "WEEK",
+                    "QUARTER",
+                    "DAY"
+                ]
+            }
+        ]
+    }
+}

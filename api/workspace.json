@@ -1,0 +1,9 @@
+{
+    "data": {
+        "id": "dvdrental",
+        "type": "workspace",
+        "attributes": {
+            "name": "DVD Rental"
+        }
+    }
+}
