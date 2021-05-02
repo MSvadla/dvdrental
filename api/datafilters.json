@@ -1,0 +1,38 @@
+{
+    "workspaceDataFilters": [
+        {
+            "id": "Store ID",
+            "title": "Store ID filter",
+            "columnName": "store_id",
+            "dataSourceId": "dvdrental",
+            "workspace": {
+                "id": "dvdrental",
+                "type": "workspace"
+            },
+            "workspaceDataFilterSettings": [
+                {
+                    "id": "leithbridge",
+                    "title": "Leithbridge store",
+                    "filterValues": [
+                        1
+                    ],
+                    "workspace": {
+                        "id": "leithbridge",
+                        "type": "workspace"
+                    }
+                },
+                {
+                    "id": "woodbridge",
+                    "title": "Woodbridge store",
+                    "filterValues": [
+                        2
+                    ],
+                    "workspace": {
+                        "id": "woodbridge",
+                        "type": "workspace"
+                    }
+                }
+            ]
+        }
+    ]
+}

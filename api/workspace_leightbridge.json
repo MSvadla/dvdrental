@@ -1,0 +1,17 @@
+{
+    "data": {
+        "id": "leightbridge",
+        "type": "workspace",
+        "attributes": {
+            "name": "Leightbridge"
+        },
+        "relationships": {
+            "parent": {
+                "data": {
+                    "id": "dvdrental",
+                    "type": "workspace"
+                }
+            }
+        }
+    }
+}

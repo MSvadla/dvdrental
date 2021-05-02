@@ -1,0 +1,14 @@
+{
+    "data": {
+        "attributes": {
+            "content": {
+                "maql": "SELECT SUM({fact/fact.rental.rentalamount})",
+                "format": "#,##0.0"
+            },
+            "title": "Rental Amount (SUM)",
+            "description": "Rental amount."
+        },
+        "id": "rentalAmount",
+        "type": "metric"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "data": {
+        "id": "woodbridge",
+        "type": "workspace",
+        "attributes": {
+            "name": "Woodbridge"
+        },
+        "relationships": {
+            "parent": {
+                "data": {
+                    "id": "dvdrental",
+                    "type": "workspace"
+                }
+            }
+        }
+    }
+}

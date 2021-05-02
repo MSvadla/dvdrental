@@ -1,0 +1,14 @@
+{
+    "data": {
+        "attributes": {
+            "content": {
+                "maql": "SELECT COUNT({attribute/attr.rental.rentalid})",
+                "format": "#,##0.0"
+            },
+            "title": "Rental Count",
+            "description": "Rental count."
+        },
+        "id": "rentalCount",
+        "type": "metric"
+    }
+}
