@@ -1,2 +1,2 @@
 docker pull postgres
-$ docker run --name dvdrental -e POSTGRES_PASSWORD=demopass -d postgres
+docker run --name dvdrental -e POSTGRES_PASSWORD=demopass -d postgres
