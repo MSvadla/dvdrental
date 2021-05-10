@@ -1,0 +1,76 @@
+{
+    "ldm": {
+        "datasets": [
+            {
+                "id": "dataset.rental",
+                "title": "Rental",
+                "description": "",
+                "grain": [
+                    {
+                        "id": "attr.rental.rentalid",
+                        "type": "attribute"
+                    }
+                ],
+                "attributes": [
+                    {
+                        "id": "attr.rental.rentalid",
+                        "title": "Rental ID",
+                        "description": "Rental ID",
+                        "labels": [
+                            {
+                                "id": "label.rental.rentalid",
+                                "title": "Rental ID",
+                                "description": "",
+                                "primary": true,
+                                "sourceColumn": "RENTAL_ID"
+                            }
+                        ]
+                    }
+                ],
+                "facts": [
+                    {
+                        "id": "fact.rental.rentalamount",
+                        "title": "Rental Amount",
+                        "description": "Rental Amount",
+                        "sourceColumn": "AMOUNT"
+                    }
+                ],
+                "references": [
+                    {
+                        "identifier": {
+                            "id": "date",
+                            "type": "dataset"
+                        },
+                        "multivalue": false,
+                        "sourceColumns": [
+                            "RENTAL_DATE"
+                        ]
+                    }
+                ],
+                "dataSourceTableId": {
+                    "id": "A_DVD_RENTAL",
+                    "dataSourceId": "dvd-snowflake",
+                    "type": "dataSource"
+                }
+            }
+        ],
+        "dateInstances": [
+            {
+                "id": "date",
+                "title": "Date",
+                "description": "",
+                "granularitiesFormatting": {
+                    "titleBase": "Date",
+                    "titlePattern": ""
+                },
+                "granularities": [
+                    "YEAR",
+                    "WEEK",
+                    "DAY",
+                    "MONTH",
+                    "QUARTER"
+                ]
+            }
+        ]
+    }
+}
