@@ -1,0 +1,310 @@
+{
+    "workspaces": [
+        {
+            "id": "dvdrental",
+            "name": "dvdrental",
+            "model": {
+                "ldm": {
+                    "datasets": [
+                        {
+                            "id": "dataset.rental",
+                            "title": "Rental",
+                            "description": "",
+                            "grain": [
+                                {
+                                    "id": "attr.rental.rentalid",
+                                    "type": "attribute"
+                                }
+                            ],
+                            "attributes": [
+                                {
+                                    "id": "attr.rental.rentalid",
+                                    "title": "Rental ID",
+                                    "description": "Rental ID",
+                                    "labels": [
+                                        {
+                                            "id": "label.rental.rentalid",
+                                            "title": "Rental ID",
+                                            "description": "",
+                                            "primary": true,
+                                            "sourceColumn": "RENTAL_ID"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "facts": [
+                                {
+                                    "id": "fact.rental.rentalamount",
+                                    "title": "Rental Amount",
+                                    "description": "Rental Amount",
+                                    "sourceColumn": "AMOUNT"
+                                }
+                            ],
+                            "references": [
+                                {
+                                    "identifier": {
+                                        "id": "dataset.store",
+                                        "type": "dataset"
+                                    },
+                                    "multivalue": false,
+                                    "sourceColumns": [
+                                        "STORE_ID"
+                                    ]
+                                },
+                                {
+                                    "identifier": {
+                                        "id": "dataset.movie",
+                                        "type": "dataset"
+                                    },
+                                    "multivalue": false,
+                                    "sourceColumns": [
+                                        "FILM_ID"
+                                    ]
+                                },
+                                {
+                                    "identifier": {
+                                        "id": "date",
+                                        "type": "dataset"
+                                    },
+                                    "multivalue": false,
+                                    "sourceColumns": [
+                                        "RENTAL_DATE"
+                                    ]
+                                }
+                            ],
+                            "dataSourceTableId": {
+                                "id": "A_DVD_RENTAL",
+                                "dataSourceId": "dvd-snowflake",
+                                "type": "dataSource"
+                            }
+                        },
+                        {
+                            "id": "dataset.country",
+                            "title": "Country",
+                            "description": "",
+                            "grain": [
+                                {
+                                    "id": "attr.country.countryid",
+                                    "type": "attribute"
+                                }
+                            ],
+                            "attributes": [
+                                {
+                                    "id": "attr.country.countryid",
+                                    "title": "Country ID",
+                                    "description": "Country ID",
+                                    "labels": [
+                                        {
+                                            "id": "label.country.countryid",
+                                            "title": "Country ID",
+                                            "description": "",
+                                            "primary": true,
+                                            "sourceColumn": "COUNTRY_ID"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "attr.country.countryname",
+                                    "title": "Country Name",
+                                    "description": "Country Name",
+                                    "labels": [
+                                        {
+                                            "id": "label.country.countryname",
+                                            "title": "Country Name",
+                                            "description": "",
+                                            "primary": true,
+                                            "sourceColumn": "COUNTRY"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "facts": [],
+                            "references": [],
+                            "dataSourceTableId": {
+                                "id": "COUNTRY",
+                                "dataSourceId": "dvd-snowflake",
+                                "type": "dataSource"
+                            }
+                        },
+                        {
+                            "id": "dataset.movie",
+                            "title": "Movie",
+                            "description": "",
+                            "grain": [
+                                {
+                                    "id": "attr.movie.movieid",
+                                    "type": "attribute"
+                                }
+                            ],
+                            "attributes": [
+                                {
+                                    "id": "attr.movie.moviename",
+                                    "title": "Movie Name",
+                                    "description": "Movie Name",
+                                    "labels": [
+                                        {
+                                            "id": "label.movie.moviename",
+                                            "title": "Movie Name",
+                                            "description": "",
+                                            "primary": true,
+                                            "sourceColumn": "TITLE"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "attr.movie.movieid",
+                                    "title": "Movie ID",
+                                    "description": "Movie ID",
+                                    "labels": [
+                                        {
+                                            "id": "label.movie.movieid",
+                                            "title": "Movie ID",
+                                            "description": "",
+                                            "primary": true,
+                                            "sourceColumn": "FILM_ID"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "facts": [],
+                            "references": [],
+                            "dataSourceTableId": {
+                                "id": "FILM",
+                                "dataSourceId": "dvd-snowflake",
+                                "type": "dataSource"
+                            }
+                        },
+                        {
+                            "id": "dataset.city",
+                            "title": "City",
+                            "description": "",
+                            "grain": [
+                                {
+                                    "id": "attr.city.cityid",
+                                    "type": "attribute"
+                                }
+                            ],
+                            "attributes": [
+                                {
+                                    "id": "attr.city.cityid",
+                                    "title": "City ID",
+                                    "description": "City ID",
+                                    "labels": [
+                                        {
+                                            "id": "label.city.cityid",
+                                            "title": "City ID",
+                                            "description": "",
+                                            "primary": true,
+                                            "sourceColumn": "CITY_ID"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "attr.city.cityname",
+                                    "title": "City Name",
+                                    "description": "City Name",
+                                    "labels": [
+                                        {
+                                            "id": "label.city.cityname",
+                                            "title": "City Name",
+                                            "description": "",
+                                            "primary": true,
+                                            "sourceColumn": "CITY"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "facts": [],
+                            "references": [],
+                            "dataSourceTableId": {
+                                "id": "CITY",
+                                "dataSourceId": "dvd-snowflake",
+                                "type": "dataSource"
+                            }
+                        },
+                        {
+                            "id": "dataset.store",
+                            "title": "Store",
+                            "description": "",
+                            "grain": [
+                                {
+                                    "id": "attr.store.storeid",
+                                    "type": "attribute"
+                                }
+                            ],
+                            "attributes": [
+                                {
+                                    "id": "attr.store.storeid",
+                                    "title": "Store ID",
+                                    "description": "Store ID",
+                                    "labels": [
+                                        {
+                                            "id": "label.store.storeid",
+                                            "title": "Store ID",
+                                            "description": "",
+                                            "primary": true,
+                                            "sourceColumn": "STORE_ID"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "facts": [],
+                            "references": [
+                                {
+                                    "identifier": {
+                                        "id": "dataset.city",
+                                        "type": "dataset"
+                                    },
+                                    "multivalue": false,
+                                    "sourceColumns": [
+                                        "CITY_ID"
+                                    ]
+                                },
+                                {
+                                    "identifier": {
+                                        "id": "dataset.country",
+                                        "type": "dataset"
+                                    },
+                                    "multivalue": false,
+                                    "sourceColumns": [
+                                        "COUNTRY_ID"
+                                    ]
+                                }
+                            ],
+                            "dataSourceTableId": {
+                                "id": "A_DVD_STORE",
+                                "dataSourceId": "dvd-snowflake",
+                                "type": "dataSource"
+                            }
+                        }
+                    ],
+                    "dateInstances": [
+                        {
+                            "id": "date",
+                            "title": "Date",
+                            "description": "",
+                            "granularitiesFormatting": {
+                                "titleBase": "Date",
+                                "titlePattern": ""
+                            },
+                            "granularities": [
+                                "WEEK",
+                                "DAY",
+                                "YEAR",
+                                "QUARTER",
+                                "MONTH"
+                            ]
+                        }
+                    ]
+                },
+                "analytics": {
+                    "analyticalDashboards": [],
+                    "filterContexts": [],
+                    "metrics": [],
+                    "visualizationObjects": []
+                }
+            }
+        }
+    ],
+    "workspaceDataFilters": []
+}
